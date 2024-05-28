@@ -28,7 +28,7 @@ jobs:
       - name: Install the project dependencies
         run: poetry install
       - name: Render Quarto project in a Poetry session
-        run: poetry run quarto render quarto"
+        run: poetry run quarto render quarto
       - name: Deploy to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
