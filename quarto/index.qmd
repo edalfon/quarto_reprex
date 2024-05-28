@@ -1,8 +1,10 @@
 --- 
-title: "Development Indicators by Continent"
-author: "Gapminder Analytics Group"
+title: "Reprex combining Pages and Tabsets"
 format: dashboard
 --- 
+
+
+# Page A: Original dashboard as it was
 
 ```{python}
 import pandas as pd
@@ -42,4 +44,126 @@ dict(
 dict(icon="chat", color="primary", value=55)
 ```
 
+
+
+# Page B, that includes tabsets {orientation="columns"}
+
+## SINGLE-CONTAINER-FOR-TABSETS-A-COLUMNS {.tabset}
+
+### Tab 1 
+
+#### Row 
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 1, col 1")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Comments per day"
+dict(icon="chat", value="row 1, col 2")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 1, col 3")
+```
+
+#### Row 
+
+```{python}
+# | content: valuebox
+# | title: "Comments per day"
+dict(icon="chat", value="row 2, col 1")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 2, col 2")
+```
+
+
+
+### Tab 2 
+
+#### Row
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 1, col 1")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Comments per day"
+dict(icon="chat", value="row 1, col 2")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 1, col 3")
+```
+
+#### Row 
+
+```{python}
+# | content: valuebox
+# | title: "Comments per day"
+dict(icon="chat", value="row 2, col 1")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 2, col 2")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 2, col 3")
+```
+
+
+# Page C, that without the tabsets 
+
+## Row 
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 1, col 1")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Comments per day"
+dict(icon="chat", value="row 1, col 2")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 1, col 3")
+```
+
+## Row 
+
+```{python}
+# | content: valuebox
+# | title: "Comments per day"
+dict(icon="chat", value="row 2, col 1")
+```
+
+```{python}
+# | content: valuebox
+# | title: "Articles per day"
+dict(icon="chat", value="row 2, col 2")
+```
 
