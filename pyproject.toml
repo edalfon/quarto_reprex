@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "quarto-reprex"
+version = "0.1.0"
+description = ""
+authors = ["edalfon <edalfon@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+myst-nb = "^1.0.0"
+sphinx-autoapi = "^3.0.0"
+sphinx-rtd-theme = "^2.0.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.9.0"
+plotly = "^5.22.0"
+pandas = "^2.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+
+
+
+

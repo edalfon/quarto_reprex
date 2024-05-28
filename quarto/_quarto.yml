@@ -1,0 +1,12 @@
+project:
+  type: website
+  execute-dir: project
+  output-dir: ../results
+           
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+

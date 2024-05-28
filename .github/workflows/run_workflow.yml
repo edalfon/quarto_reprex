@@ -1,0 +1,39 @@
+name: quarto
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+
+jobs:
+  prefect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Install Python
+        uses: actions/setup-python@v5
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v3
+      - name: Setup a local virtual environment (if no poetry.toml file)
+        run: |
+          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.in-project true --local
+      - uses: actions/cache@v4
+        name: Define a cache for the virtual environment based on the dependencies lock file
+        with:
+          path: ./.venv
+          key: venv-${{ hashFiles('poetry.lock') }}
+      - name: Install the project dependencies
+        run: poetry install
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+          with:
+            path: quarto 
+      - name: Deploy to Github Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: false
+          branch: gh-pages          
+          folder: results
