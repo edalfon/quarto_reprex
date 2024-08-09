@@ -2,11 +2,12 @@
 title: "Plotly within panel-tabset reprex"
 --- 
 
+Example taken from https://plotly.com/python/bar-charts/
 
 ::: {.panel-tabset}
 #### Tab 1
 ```{python}
-# From https://plotly.com/python/bar-charts/
+#| echo: false
 import plotly.express as px
 data_canada = px.data.gapminder().query("country == 'Canada'")
 fig = px.bar(data_canada, x='year', y='pop')
