@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Plotly within panel-tabset reprex",
+    "section": "",
+    "text": "Tab 1Tab 2\n\n\n\n# From https://plotly.com/python/bar-charts/\nimport plotly.express as px\ndata_canada = px.data.gapminder().query(\"country == 'Canada'\")\nfig = px.bar(data_canada, x='year', y='pop')\nfig.show()\n\n                                                \n\n\n\n\n\nimport plotly.express as px\ndata_canada = px.data.gapminder().query(\"country == 'Canada'\")\nfig = px.bar(data_canada, x='year', y='pop')\nfig.show()"
+  }
+]
