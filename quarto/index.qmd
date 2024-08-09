@@ -1,45 +1,25 @@
 --- 
-title: "Development Indicators by Continent"
-author: "Gapminder Analytics Group"
-format: dashboard
+title: "Plotly within panel-tabset reprex"
 --- 
 
+
+::: {.panel-tabset}
+#### Tab 1
 ```{python}
-import pandas as pd
+# From https://plotly.com/python/bar-charts/
 import plotly.express as px
-
-df = px.data.gapminder()
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
+fig.show()
 ```
 
-## Row {height=60%}
-
+#### Tab 2
 ```{python}
-#| title: GDP and Life Expectancy 
-px.scatter(  
-  df, x="gdpPercap", y="lifeExp", 
-  animation_frame="year", animation_group="country", 
-  size="pop", color="continent", hover_name="country",
-  facet_col="continent", log_x=True, size_max=45, 
-  range_x=[100,100000], range_y=[25,90] 
-)  
+import plotly.express as px
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
+fig.show()
 ```
-
-## Row {height=40%}
-
-```{python}
-#| content: valuebox
-#| title: "Articles per day"
-#| icon: pencil
-#| color: primary
-dict(
-  value = 45
-)
-```
-
-```{python}
-# | content: valuebox
-# | title: "Comments per day"
-dict(icon="chat", color="primary", value=55)
-```
+:::
 
 
