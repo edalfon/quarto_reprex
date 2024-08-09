@@ -1,8 +1,5 @@
 name: quarto
-on:
-  push:
-    branches:
-      - '**'  # This will trigger the workflow on push to any branch
+on: push
 permissions:
   contents: write
 
