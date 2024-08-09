@@ -4,6 +4,6 @@
     "href": "index.html",
     "title": "Plotly within panel-tabset reprex",
     "section": "",
-    "text": "Example taken from https://plotly.com/python/bar-charts/\n\nTab 1Tab 2\n\n\n\n\n                                                \n\n\n\n\n\nimport plotly.express as px\ndata_canada = px.data.gapminder().query(\"country == 'Canada'\")\nfig = px.bar(data_canada, x='year', y='pop')\nfig.show()"
+    "text": "Example taken from https://plotly.com/python/bar-charts/\n\nTab 1Tab 2"
   }
 ]
