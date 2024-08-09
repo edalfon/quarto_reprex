@@ -2,7 +2,7 @@ name: quarto
 on:
   push:
     branches:
-      - main
+      - '**'  # This will trigger the workflow on push to any branch
 permissions:
   contents: write
 
@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}  # This will checkout the branch that triggered the workflow
       - uses: quarto-dev/quarto-actions/setup@v2
       - name: Install Python
         uses: actions/setup-python@v5
